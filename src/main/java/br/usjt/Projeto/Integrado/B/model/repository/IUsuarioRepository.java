@@ -1,6 +1,6 @@
-package br.usjt.ccp3bn_mca_projeto_integrado.model.repository;
+package br.usjt.Projeto.Integrado.B.model.repository;
 
-import br.usjt.ccp3bn_mca_projeto_integrado.model.Usuario;
+import br.usjt.Projeto.Integrado.B.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

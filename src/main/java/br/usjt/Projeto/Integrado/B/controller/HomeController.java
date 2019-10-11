@@ -1,4 +1,4 @@
-package br.usjt.ccp3bn_mca_projeto_integrado.controller;
+package br.usjt.Projeto.Integrado.B.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package br.usjt.ccp3bn_mca_projeto_integrado.model;
+package br.usjt.Projeto.Integrado.B.model;
 
 import javax.persistence.*;
 
