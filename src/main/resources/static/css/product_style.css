@@ -1,0 +1,19 @@
+.card-img-top {
+    /* padding: 5px; */
+}
+
+.card {
+    margin: 0px 0px 10px 0px;
+}
+
+.secao-box {
+    border-style: solid;
+    border-color: #dcdcdc;
+    border-width: 1px;
+    padding: 10px 0px;
+    margin: 0px 10px 10px 0px;
+}   
+
+.secao-box {
+    margin-top: 20px;
+}
