@@ -9,6 +9,6 @@ public class HomeController {
 
     @GetMapping (value = {"/home", "/"})
     public ModelAndView login () {
-        return new ModelAndView ("home");
+        return new ModelAndView ("login");
     }
 }
