@@ -146,8 +146,20 @@
         </div>
     </div>
 
-    <div>
-
+    <!--    listagem de produtos-->
+    <div class="secao-legenda">
+        Produtos
+    </div>
+    <div class="row secao-box">
+        <div class="col-md-12">
+            <tr th:each="produto : ${produtos}">
+                <td th:utext="*{produto.getNome()}"></td>
+                <td th:utext="*{produto.getPreco()}"></td>
+                <td>
+                    <a th:href="@{'/produto/mostrar/' + ${produto.getId()}}">Ver</a>
+                </td>
+            </tr>
+        </div>
     </div>
 </div>
 
