@@ -17,4 +17,9 @@ public class ProdutoService implements IProdutoService {
     public List<Produto> findAll() {
         return produtoRepo.findAll();
     }
+
+    @Override
+    public void adicionar(Produto produto) {
+        produtoRepo.save(produto);
+    }
 }

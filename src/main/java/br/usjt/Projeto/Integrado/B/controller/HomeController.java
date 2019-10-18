@@ -1,11 +1,11 @@
 package br.usjt.Projeto.Integrado.B.controller;
 
 import br.usjt.Projeto.Integrado.B.model.Produto;
-import br.usjt.Projeto.Integrado.B.service.IProdutoService;
+import br.usjt.Projeto.Integrado.B.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-        import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    IProdutoService produtoService;
+    ProdutoService produtoService;
 
     @GetMapping(value = {"/home", "/"})
     public ModelAndView login() {
