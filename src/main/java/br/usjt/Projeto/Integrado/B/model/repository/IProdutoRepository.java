@@ -10,4 +10,5 @@ import javax.transaction.Transactional;
 @Transactional
 public interface IProdutoRepository extends JpaRepository<Produto, Long> {
 
+    Produto getProdutoById(Long id);
 }

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <nav th:replace="/fragments/navigation :: navigation"></nav>
+    <div th:object="${produto}">
+        <ul>
+            <li th:text="${produto.nome}"></li>
+            <li th:text="${produto.preco}"></li>
+            <li th:text="${produto.codigo}"></li>
+            <li th:text="${produto.marca}"></li>
+            <li th:text="${produto.categoria}"></li>
+            <li th:text="${produto.descricao}"></li>
+        </ul>
+    </div>
+</div>
+<div th:replace="/fragments/footer :: footer"></div>
+</body>
+</html>
