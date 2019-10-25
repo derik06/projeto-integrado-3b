@@ -16,7 +16,7 @@ public class HomeController {
     ProdutoService produtoService;
 
     @GetMapping(value = {"/home", "/"})
-    public ModelAndView login() {
+    public ModelAndView listaProduto() {
         ModelAndView mv = new ModelAndView("home");
         List<Produto> produtos = produtoService.findAll();
         mv.addObject("produtos", produtos);

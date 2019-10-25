@@ -28,7 +28,7 @@ public class ProdutoController {
     @PostMapping("adicionar")
     public ModelAndView adicionar(Produto produto) {
         produtoService.adicionar(produto);
-        return new ModelAndView("visualizar");
+        return new ModelAndView("produto/visualizar");
     }
 
     @GetMapping(value="produto/{id}")
