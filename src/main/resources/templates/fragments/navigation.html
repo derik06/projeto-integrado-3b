@@ -5,8 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navigation">
-    <a class="navbar-brand" href="/">Home</a>
+<nav class="navbar navbar-dark navbar-expand-lg" th:fragment="navigation">
+    <div class="">
+        <a class="navbar-brand" href="/">
+            <img id="img-home" class="icon" th:src="@{/icons/home.svg}" alt="Home">
+        </a>
+    </div>
     <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse"
             type="button">
@@ -29,10 +33,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Informática</a>
             </li>
-            <li>
-                <img th:src="@{/icons/cart.svg}" alt="Shopping cart"/>
-            </li>
         </ul>
+        <img id="img-cart" th:src="@{/icons/cart.svg}" alt="Shopping cart"/>
     </div>
 </nav>
 </body>

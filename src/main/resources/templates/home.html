@@ -5,129 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<nav th:replace="/fragments/navigation :: navigation"></nav>
 <div class="container">
-    <nav th:replace="/fragments/navigation :: navigation"></nav>
-    <div class="secao-legenda">
-        Mais vendidios
-    </div>
-    <div class="row secao-box">
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/tv.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Smart TV 4K</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/babeador.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Aparelho de Barbear</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/celular.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Smartphone Samsung</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/babeador.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Aparelho de Barbear</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/tv.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Smart TV 4K</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/celular.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Smartphone Samsung</h5>
-                </div>
-            </div>
-        </div>
+
+    <div class="title">
+        <h2>Produtos</h2>
     </div>
 
-    <div class="secao-legenda">
-        Promoções
-    </div>
-    <div class="row secao-box">
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/tv.jpg">
+    <div class="card-group">
+        <div class="col-md-4 card" th:each="produto: ${produtos}">
+            <a th:href="@{'/produto/' + ${produto.id}}">
+                <img class="card-img-top" th:src="@{/img/celular.jpg}" th:alt="'Imagem: ' + *{produto.nome}">
                 <div class="card-body">
-                    <h5 class="card-title">Smart TV 4K</h5>
+                    <h4 class="card-title" th:text="'R$ ' + *{produto.preco}">R$</h4>
+                    <h5 class="card-title" th:text="*{produto.nome}"></h5>
                 </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/babeador.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Aparelho de Barbear</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/celular.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Smartphone Samsung</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/babeador.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Aparelho de Barbear</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/tv.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Smart TV 4K</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="card">
-                <img alt="Card image cap" class="card-img-top" src="img/celular.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Smartphone Samsung</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--    listagem de produtos-->
-    <div class="secao-legenda">
-        Produtos
-    </div>
-    <div class="row secao-box">
-        <div class="col-md-12">
-            <tr th:each="produto : ${produtos}">
-                <td th:utext="*{produto.getNome()}"></td>
-                <td th:utext="*{produto.getPreco()}"></td>
-                <td>
-                    <a th:href="@{'/produto/' + ${produto.getId()}}">Ver</a>
-                </td>
-            </tr>
+            </a>
         </div>
     </div>
 </div>

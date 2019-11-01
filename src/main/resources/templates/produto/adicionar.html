@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<nav th:replace="/fragments/navigation :: navigation"></nav>
 <div class="container">
-    <nav th:replace="/fragments/navigation :: navigation"></nav>
     <div>
         <h2>Adicionar Produto</h2>
         <form action="#" th:action="@{/adicionar}" th:object="${produto}" method="post">
