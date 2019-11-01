@@ -8,4 +8,6 @@ public interface IProdutoService {
     public List<Produto> findAll();
 
     public void adicionar(Produto produto);
+
+    public List<Produto> buscaPorCategoria(String categoria);
 }

@@ -2,6 +2,7 @@ package br.usjt.Projeto.Integrado.B.service;
 
 import br.usjt.Projeto.Integrado.B.model.Produto;
 import br.usjt.Projeto.Integrado.B.model.repository.IProdutoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,5 +28,10 @@ public class ProdutoService implements IProdutoService {
 
     public Produto getProdutoById(Long id) {
         return produtoRepo.getProdutoById(id);
+    }
+
+    @Override
+    public List<Produto> buscaPorCategoria(String categoria) {
+        return produtoRepo.buscaPorCategoria(categoria);
     }
 }
