@@ -4,17 +4,24 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container">
-    <nav th:replace="/fragments/navigation :: navigation"></nav>
-    <div th:object="${produto}">
-        <ul>
-            <li th:text="${produto.nome}"></li>
-            <li th:text="${produto.preco}"></li>
-            <li th:text="${produto.codigo}"></li>
-            <li th:text="${produto.marca}"></li>
-            <li th:text="${produto.categoria}"></li>
-            <li th:text="${produto.descricao}"></li>
-        </ul>
+<nav th:replace="/fragments/navigation :: navigation"></nav>
+<div class="container" th:object="${produto}">
+    <div class="title">
+        <h2 th:text="${produto.nome}"></h2>
+    </div>
+    <div class="row" id="div-view-product">
+        <div class="col-md-6">
+            <img class="items-view-product" th:src="@{/img/celular.jpg}" th:alt="'Imagem: ' + ${produto.nome}">
+        </div>
+        <div class="col-md-6">
+            <ul class="items-view-product">
+                <li th:text="${produto.preco}"></li>
+                <li th:text="${produto.codigo}"></li>
+                <li th:text="${produto.marca}"></li>
+                <li th:text="${produto.categoria}"></li>
+                <li th:text="${produto.descricao}"></li>
+            </ul>
+        </div>
     </div>
 </div>
 <div th:replace="/fragments/footer :: footer"></div>

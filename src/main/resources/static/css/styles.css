@@ -1,0 +1,43 @@
+body {
+    background-color: #f2f2f2;
+}
+
+nav {
+    background: #0074D9;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    margin: 1em;
+}
+
+.title {
+    margin: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #4e555b;
+}
+
+.card > a > img {
+    margin: 0.5em;
+}
+
+#img-home, #img-cart {
+    height: 30px;
+    width: 30px;
+}
+
+#div-view-product {
+    background-color: white;
+    margin: 1em;
+    border-radius: 5px;
+}
+
+.items-view-product {
+    margin: 1em;
+    align-items: center;
+}
