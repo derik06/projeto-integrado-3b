@@ -7,7 +7,7 @@ services:
       MYSQL_ROOT_PASSWORD: "password"
       MYSQL_DATABASE: "ccp3bn_mca_projeto_integrado"
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db1_data:/var/lib/mysql
 
@@ -17,7 +17,7 @@ services:
       MYSQL_ROOT_PASSWORD: "password"
       MYSQL_DATABASE: "ccp3bn_mca_projeto_integrado"
     ports:
-      - "3307:3306"
+      - "3308:3306"
     volumes:
       - db2_data:/var/lib/mysql
 
