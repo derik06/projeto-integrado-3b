@@ -2,7 +2,7 @@ package br.usjt.Projeto.Integrado.B.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "usuario")
 public class Usuario {
 
     @Id

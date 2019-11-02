@@ -17,16 +17,16 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping(value = {"login", "fazerLogin"})
+    @GetMapping(value = {"login"})
     public ModelAndView login () {
         ModelAndView mv = new ModelAndView ("login");
         mv.addObject(new Usuario());
         return mv;
     }
 
-    @PostMapping({"/login", "/fazerLogin"})
+    @PostMapping({"/login"})
     public String fazerLogin (HttpServletRequest request, Usuario usuario, Model model) {
-        if (loginService.logar(usuario)) {
+            if (loginService.logar(usuario)) {
             return "redirect:/";
         } else {
             model.addAttribute("erroLogin", "erroLogin");

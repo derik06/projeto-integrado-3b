@@ -4,8 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-<nav th:replace="/fragments/navigation :: navigation"></nav>
 <div class="container" th:object="${produto}">
+    <nav th:replace="/fragments/navigation :: navigation"></nav>
     <div class="title">
         <h2 th:text="${produto.nome}"></h2>
     </div>
