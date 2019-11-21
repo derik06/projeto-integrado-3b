@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
@@ -17,20 +18,21 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping(value = {"login"})
-    public ModelAndView login () {
+    @GetMapping (value = {"/login", "/fazerLogin", "/"})
+    public ModelAndView login() {
         ModelAndView mv = new ModelAndView ("login");
         mv.addObject(new Usuario());
         return mv;
     }
 
-    @PostMapping({"/login"})
-    public String fazerLogin (HttpServletRequest request, Usuario usuario, Model model) {
-            if (loginService.logar(usuario)) {
-            return "redirect:/";
+    @PostMapping({"/login", "/fazerLogin", "/"})
+    public String fazerLogin(HttpServletRequest request, HttpSession session, Usuario usuario, Model model) {
+        session.invalidate();
+        if (loginService.logar(usuario)) {
+        	return "redirect:/home";
         } else {
-            model.addAttribute("erroLogin", "erroLogin");
-            return "login";
+        	model.addAttribute("erroLogin", "erroLogin");
         }
+        return "login";
     }
 }

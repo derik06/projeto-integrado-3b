@@ -16,7 +16,7 @@ public class HomeController {
     @Autowired
     ProdutoService produtoService;
 
-    @GetMapping(value = {"/home", "/"})
+    @GetMapping(value = {"/home"})
     public ModelAndView listaProduto() {
         ModelAndView mv = new ModelAndView("home");
         List<Produto> produtos = produtoService.findAll();
