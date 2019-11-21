@@ -18,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProdutoController {
 
     private final ProdutoService produtoService;
+    
+    ArrayList<Produto> produtos = new ArrayList<Produto>();
 
     public ProdutoController(ProdutoService produtoService) {
         this.produtoService = produtoService;
@@ -47,8 +49,8 @@ public class ProdutoController {
     
     @GetMapping(value="produto/carrinho/{id}")
     public String adicionaCarrinho(@PathVariable Long id, HttpSession session) {
-        ArrayList<Produto> produtos = new ArrayList<Produto>();
-        Produto produto = produtoService.getProdutoById(id);
+    	
+    	Produto produto = produtoService.getProdutoById(id);
         //adiciona produto à lista do carrinho
         produtos.add(produto);
         session.setAttribute("produtos", produtos);

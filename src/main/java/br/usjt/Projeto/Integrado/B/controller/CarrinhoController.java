@@ -1,6 +1,7 @@
 package br.usjt.Projeto.Integrado.B.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -23,10 +24,11 @@ public class CarrinhoController {
     }
 	
 	@GetMapping(value="carrinho")
-    public ModelAndView visualizar(HttpServletRequest request, HttpSession session) {
+    public ModelAndView visualizar(HttpSession session) {
 		ArrayList<Produto> produtos = (ArrayList<Produto>) session.getAttribute("produtos");
         ModelAndView carrinhoMV = new ModelAndView("carrinho");
         carrinhoMV.addObject("produtos", produtos);
+        
         return carrinhoMV;
     }
 }
