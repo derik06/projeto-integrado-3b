@@ -2,7 +2,6 @@ package br.usjt.Projeto.Integrado.B.service;
 
 import br.usjt.Projeto.Integrado.B.model.Produto;
 import br.usjt.Projeto.Integrado.B.model.repository.IProdutoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
