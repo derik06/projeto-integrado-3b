@@ -21,6 +21,27 @@ services:
     volumes:
       - db2_data:/var/lib/mysql
 
+  app1:
+    build: .
+    depends_on:
+      - db1
+    ports:
+      - 8888:8888
+
+  app2:
+    build: .
+    depends_on:
+      - db1
+    ports:
+      - 8889:8888
+
+  frontend:
+    image: nginx
+#    volumes:
+#      - ./confs/nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - 8080:80
+
 volumes:
   db1_data:
   db2_data:
