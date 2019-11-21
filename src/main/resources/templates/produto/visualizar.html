@@ -23,8 +23,8 @@
             </ul>
         </div>
         <div>
-        	<button>Adicionar ao Carrinho</button>
-        </div>
+        	<a th:href="@{'/produto/carrinho/' + ${produto.id}}">Adicionar ao Carrinho</a>
+       	</div>
     </div>
 </div>
 <div th:replace="/fragments/footer :: footer"></div>

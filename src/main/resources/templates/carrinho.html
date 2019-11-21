@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: header">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <nav th:replace="/fragments/navigation :: navigation"></nav>
+    <div class="title">
+        <h2>Produtos</h2>
+    </div>
+
+    <div class="card-group">
+        <div class="col-md-4 card" th:each="produto: ${produtos}">
+	        <div class="card-body">
+	            <h4 class="card-title" th:text="'R$ ' + *{produto.preco}">R$</h4>
+	            <h5 class="card-title" th:text="*{produto.nome}"></h5>
+	        </div>
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="/fragments/footer :: footer">
+
+</div>
+</body>
+</html>

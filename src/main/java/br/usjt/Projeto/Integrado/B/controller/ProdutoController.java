@@ -2,6 +2,12 @@ package br.usjt.Projeto.Integrado.B.controller;
 
 import br.usjt.Projeto.Integrado.B.model.Produto;
 import br.usjt.Projeto.Integrado.B.service.ProdutoService;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,5 +44,14 @@ public class ProdutoController {
         produtoMV.addObject("produto", produto);
         return produtoMV;
     }
-
+    
+    @GetMapping(value="produto/carrinho/{id}")
+    public String adicionaCarrinho(@PathVariable Long id, HttpSession session) {
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
+        Produto produto = produtoService.getProdutoById(id);
+        //adiciona produto à lista do carrinho
+        produtos.add(produto);
+        session.setAttribute("produtos", produtos);
+        return "redirect:/";
+    }
 }
