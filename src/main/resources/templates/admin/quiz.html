@@ -6,11 +6,18 @@
 	
 	<body>
 		<div class="container" th:object="${questao}">
-			<div class="col-md-6">
-	            <ul class="items-view-product">
-	                <li th:text="${questao.pergunta}"></li>
-	            </ul>
-	        </div>
+			<div th:text="${questao.pergunta}"></div>
+			
+			<form th:action="@{/quiz}" th:object="${questao}" method="post">
+				<input type="hidden" th:field="*{id}" th:value="${questao.id}" >
+				<input type="hidden" th:field="*{pergunta}" th:value="${questao.pergunta}" >
+				
+				<input type="radio" th:field="*{alternativaCorreta}" value="a"> A
+				<input type="radio" th:field="*{alternativaCorreta}" value="b" > B
+				<input type="radio" th:field="*{alternativaCorreta}" value="c"> C
+				
+				<input type="submit">
+			</form>
 		</div>
 	</body>
 </html>
