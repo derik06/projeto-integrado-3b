@@ -15,7 +15,7 @@
     <div class="card-group">
         <div class="col-md-4 card" th:each="produto: ${produtos}">
             <a th:href="@{'/produto/' + ${produto.id}}">
-                <img class="card-img-top" th:src="@{/img/celular.jpg}" th:alt="'Imagem: ' + *{produto.nome}">
+                <img class="card-img-top" th:src="@{produto.imagem}" th:alt="'Imagem: ' + *{produto.nome}">
                 <div class="card-body">
                     <h4 class="card-title" th:text="'R$ ' + *{produto.preco}">R$</h4>
                     <h5 class="card-title" th:text="*{produto.nome}"></h5>

@@ -14,6 +14,7 @@ public class Produto {
     private String marca;
     private String categoria;
     private String descricao;
+    private String imagem;
 
     public Long getId() {
         return id;
@@ -69,5 +70,13 @@ public class Produto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem= imagem;
     }
 }

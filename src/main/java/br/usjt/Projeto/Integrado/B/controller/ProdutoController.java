@@ -54,6 +54,6 @@ public class ProdutoController {
         //adiciona produto à lista do carrinho
         produtos.add(produto);
         session.setAttribute("produtos", produtos);
-        return "redirect:/";
+        return "redirect:/home";
     }
 }
