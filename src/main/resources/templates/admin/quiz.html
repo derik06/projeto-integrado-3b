@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/header :: header">
+	    <title>Quiz</title>
+	</head>
+	
+	<body>
+		<div class="container" th:object="${questao}">
+			<div class="col-md-6">
+	            <ul class="items-view-product">
+	                <li th:text="${questao.pergunta}"></li>
+	            </ul>
+	        </div>
+		</div>
+	</body>
+</html>
