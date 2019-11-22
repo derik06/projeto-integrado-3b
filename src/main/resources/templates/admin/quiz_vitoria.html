@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 	<head th:replace="fragments/header :: header">
-	    <title>Quiz Vitoria \o/</title>
+	    <title>Quiz Vitoria</title>
 	</head>
 	
 	<body>
-		<h1>Quiz Vitoria \o/</h1>
+		<div class="container" th:object="${questao}">
+			<nav th:replace="/fragments/navigation_admin :: navigation"></nav>
+			<div class="admin-box">
+				<div class="row">
+					<div class="col-12 pergunta">
+						Parabéns você venceu \o/	
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

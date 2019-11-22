@@ -41,3 +41,22 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1em;
     align-items: center;
 }
+
+.admin-box {
+	margin-top: 10px;
+	background-color: white;
+}
+
+.pergunta {
+	font-size: 35px;
+	padding: 0px 0px 10px 30px;
+}
+
+.alternativa {
+	font-size: 25px;
+	padding: 0px 0px 10px 30px;
+}
+
+.escolher {
+	padding: 0px 0px 10px 30px;
+}

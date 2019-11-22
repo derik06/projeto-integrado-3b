@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Status</title>
-</head>
-<body>
-
-</body>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/header :: header">
+	    <title>Quiz</title>
+	</head>
+	
+	<body>
+		<div class="container" th:object="${questao}">
+			<nav th:replace="/fragments/navigation_admin :: navigation"></nav>
+			<div class="admin-box">
+				
+			</div>
+		</div>
+	</body>
 </html>

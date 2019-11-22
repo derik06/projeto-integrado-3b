@@ -15,7 +15,14 @@ public class Questao {
     private Long id;
 	private String pergunta;
 	private char alternativaCorreta;
+	private String alternativas;
 	
+	public String getAlternativas() {
+		return alternativas;
+	}
+	public void setAlternativas(String alternativas) {
+		this.alternativas = alternativas;
+	}
 	public Long getId() {
 		return id;
 	}
