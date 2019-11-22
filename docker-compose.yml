@@ -10,6 +10,9 @@ services:
       - "3307:3306"
     volumes:
       - db1_data:/var/lib/mysql
+      - db1_log:/var/log/mysql
+      - ./confs/mysql/db1/conf.d:/etc/mysql/mysql.conf.d/
+      - ./confs/mysql/db1/backup:/backup
 
   db2:
     image: mysql
@@ -20,6 +23,9 @@ services:
       - "3308:3306"
     volumes:
       - db2_data:/var/lib/mysql
+      - db2_log:/var/log/mysql
+      - ./confs/mysql/db2/conf.d:/etc/mysql/mysql.conf.d/
+      - ./confs/mysql/db2/backup:/backup
 
   app1:
     build: .
@@ -44,4 +50,7 @@ services:
 
 volumes:
   db1_data:
+  db1_log:
   db2_data:
+  db2_log:
+
