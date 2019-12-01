@@ -11,7 +11,7 @@
     </div>
     <div class="row" id="div-view-product">
         <div class="col-md-6">
-            <img class="items-view-product" th:src="@{/img/celular.jpg}" th:alt="'Imagem: ' + ${produto.nome}">
+            <img class="items-view-product" th:src="${produto.imagem}" th:alt="'Imagem: ' + ${produto.nome}">
         </div>
         <div class="col-md-6">
             <ul class="items-view-product">
@@ -21,10 +21,8 @@
                 <li th:text="${produto.categoria}"></li>
                 <li th:text="${produto.descricao}"></li>
             </ul>
+            <a class="btn btn-primary" th:href="@{'/produto/carrinho/' + ${produto.id}}">Adicionar ao Carrinho</a>
         </div>
-        <div>
-        	<a th:href="@{'/produto/carrinho/' + ${produto.id}}">Adicionar ao Carrinho</a>
-       	</div>
     </div>
 </div>
 <div th:replace="/fragments/footer :: footer"></div>

@@ -1,35 +1,21 @@
 package br.usjt.Projeto.Integrado.B.service;
 
-import br.usjt.Projeto.Integrado.B.model.Produto;
 import br.usjt.Projeto.Integrado.B.model.Usuario;
-import br.usjt.Projeto.Integrado.B.model.repository.IUsuarioRepository;
+import br.usjt.Projeto.Integrado.B.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class LoginService implements IProdutoService{
+public class LoginService implements ILoginService{
 
     @Autowired
-    private IUsuarioRepository usuarioRepo;
+    private UsuarioRepository usuarioRepo;
 
-    public boolean logar (Usuario usuario) {
-        return usuarioRepo.findOneByNomeAndSenha(usuario.getNome(), usuario.getSenha()) != null;
+    public Usuario logar (Usuario usuario) {
+        return usuarioRepo.findOneByNomeAndSenha(usuario.getNome(), usuario.getSenha());
     }
-
-    @Override
-    public List<Produto> findAll() {
-        return null;
-    }
-
-    @Override
-    public void adicionar(Produto produto) {
-
-    }
-
-    @Override
-    public List<Produto> buscaPorCategoria(String categoria) {
-        return null;
+    
+    public String verificarPermissao(Usuario usuario) {
+        return usuarioRepo.findByNomeQuery(usuario.getNome()).getPermissao();
     }
 }

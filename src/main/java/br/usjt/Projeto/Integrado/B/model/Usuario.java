@@ -2,7 +2,7 @@ package br.usjt.Projeto.Integrado.B.model;
 
 import javax.persistence.*;
 
-@Entity(name = "usuario")
+@Entity
 public class Usuario {
 
     @Id
@@ -17,6 +17,7 @@ public class Usuario {
     private String cidade;
     private String pais;
     private String cep;
+    private String permissao;
 
     public Long getId() {
         return id;
@@ -97,4 +98,12 @@ public class Usuario {
     public void setCep(String cep) {
         this.cep = cep;
     }
+
+	public String getPermissao() {
+		return permissao;
+	}
+
+	public void setPermissao(String permissao) {
+		this.permissao = permissao;
+	}
 }

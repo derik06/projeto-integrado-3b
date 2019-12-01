@@ -28,8 +28,18 @@ public class LoginController {
     @PostMapping({"/login", "/fazerLogin", "/"})
     public String fazerLogin(HttpServletRequest request, HttpSession session, Usuario usuario, Model model) {
         session.invalidate();
-        if (loginService.logar(usuario)) {
-        	return "redirect:/home";
+        
+        Usuario user = loginService.logar(usuario);
+        
+        if (user != null) {
+        	
+        	if (user.getPermissao().equals("admin")) {
+        		request.getSession().setAttribute("administrador", usuario);
+                return "redirect:/admin";
+        	} else if (user.getPermissao().equals("user")){
+        		request.getSession().setAttribute("usuario", usuario);
+                return "redirect:/home";
+        	}
         } else {
         	model.addAttribute("erroLogin", "erroLogin");
         }
